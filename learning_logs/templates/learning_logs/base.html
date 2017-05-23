@@ -1,0 +1,52 @@
+<style>
+        p{
+            background: orange
+
+        }   
+        body{
+            background: chocolate
+        }
+        a {
+            background: inherit;
+            transition: 5s background;
+        }       
+        a:hover {
+            background: white;
+            transition: 0.5s background;
+        }
+        div.trail {
+            position: absolute;
+            background: red;
+            height: 5px;
+            width: 5px;
+            border-radius: 100px;
+        }
+        </style>
+<p>
+    <a href="{% url 'learning_logs:index' %}"> Learning Log</a> => 
+    <a href="{% url 'learning_logs:topics' %}"> Topics </a>
+    {% if user.is_authenticated %}
+    Hello , {{ user.username }}
+    <a href="{% url 'users:logout' %}">log out</a>
+    {% else %}
+    <a href="{% url 'users:register' %}">Register</a>
+    <a href="{% url 'users:login' %}">log in</a>
+    {% endif %}
+</p>
+
+{% block content %}{% endblock content %}
+
+
+<!--<script>
+console.log("Running successfully");
+    function handler(event){
+        let dot = document.createElement("div");
+        dot.className="trail"
+        dot.style.top = event.pageY + 'px';
+        dot.style.left = event.pageX + 'px';
+        document.body.appendChild(dot);
+        setTimeout(function(){ document.body.removeChild(dot)}, 400);
+    }  
+    addEventListener("mousemove", function(event){handler(event)})
+</script>-->
+
