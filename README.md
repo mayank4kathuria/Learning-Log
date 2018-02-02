@@ -2,9 +2,10 @@
 
 Learning Log is a Django based Web App that is intended to be a fun project.
 
-This Web App logs user's daily activities with date and time and show them in a Topic segregated manner.
+This Web App logs user's daily activities with a beautiful event style 
+date and time while displayig them in a Topic segregated manner.
 
-This Web App has features like
+Web App features include 
 
 1) User Registeration
 2) Topic wise Log activities
